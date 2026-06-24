@@ -11,6 +11,141 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .work-preview {
+      padding: 16px;
+      background:
+        radial-gradient(circle at 24% 20%, rgba(10, 183, 176, 0.28), transparent 34%),
+        linear-gradient(135deg, #f8fafc, #dff8f6);
+    }
+
+    .work-preview.creator,
+    .work-preview.local {
+      background:
+        radial-gradient(circle at 24% 20%, rgba(10, 183, 176, 0.3), transparent 30%),
+        linear-gradient(135deg, #101820, #17423f);
+    }
+
+    .mini-browser {
+      height: 100%;
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(16, 24, 32, 0.12);
+      border-radius: 8px;
+      box-shadow: 0 12px 30px rgba(16, 24, 32, 0.12);
+    }
+
+    .mini-topbar,
+    .mini-hero,
+    .mini-profile,
+    .mini-shop {
+      display: flex;
+      align-items: center;
+    }
+
+    .mini-topbar {
+      gap: 5px;
+    }
+
+    .mini-topbar span {
+      width: 8px;
+      height: 8px;
+      background: var(--line);
+      border-radius: 50%;
+    }
+
+    .mini-hero,
+    .mini-profile,
+    .mini-shop {
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 48px;
+      padding: 10px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--ink), var(--teal-dark));
+      border-radius: 8px;
+    }
+
+    .mini-hero div,
+    .mini-profile div,
+    .mini-shop {
+      display: grid;
+      gap: 4px;
+    }
+
+    .mini-hero b,
+    .mini-profile b,
+    .mini-shop b {
+      font-size: 0.78rem;
+    }
+
+    .mini-hero small,
+    .mini-profile small,
+    .mini-shop small {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.64rem;
+    }
+
+    .mini-hero em {
+      flex: 0 0 auto;
+      padding: 6px 8px;
+      color: var(--ink);
+      background: var(--teal);
+      border-radius: 999px;
+      font-size: 0.58rem;
+      font-style: normal;
+      font-weight: 800;
+    }
+
+    .mini-profile {
+      justify-content: flex-start;
+    }
+
+    .mini-profile > span {
+      width: 38px;
+      height: 38px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+
+    .mini-tiles,
+    .mini-list,
+    .mini-products {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mini-tiles {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .mini-products {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .mini-tiles span,
+    .mini-list span,
+    .mini-products span {
+      min-height: 24px;
+      background: #eef3f7;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .mini-list span {
+      min-height: 10px;
+    }
+
+    .mini-list span:nth-child(2) {
+      width: 78%;
+    }
+
+    .mini-list span:nth-child(3) {
+      width: 58%;
+    }
+  </style>
 </head>
 <body class="loading">
   <div class="page-loader" id="pageLoader" aria-label="Extraxtz Web Design loading screen">
@@ -116,17 +251,50 @@
       </div>
       <div class="work-grid">
         <article class="work-card">
-          <div class="work-preview contractor"></div>
+          <div class="work-preview contractor" aria-label="Contractor website sample concept">
+            <div class="mini-browser">
+              <div class="mini-topbar"><span></span><span></span><span></span></div>
+              <div class="mini-hero">
+                <div>
+                  <b>Roof Repair Pros</b>
+                  <small>Emergency quotes today</small>
+                </div>
+                <em>Get Estimate</em>
+              </div>
+              <div class="mini-tiles"><span></span><span></span><span></span></div>
+            </div>
+          </div>
           <h3>Contractors & Trades</h3>
           <p>Roofing, landscaping, cleaning, repair, painting, and service pages with quote buttons and photo sections.</p>
         </article>
         <article class="work-card">
-          <div class="work-preview creator"></div>
+          <div class="work-preview creator" aria-label="Creator website sample concept">
+            <div class="mini-browser">
+              <div class="mini-topbar"><span></span><span></span><span></span></div>
+              <div class="mini-profile">
+                <span></span>
+                <div>
+                  <b>Book a Session</b>
+                  <small>Coaching, content, offers</small>
+                </div>
+              </div>
+              <div class="mini-list"><span></span><span></span><span></span></div>
+            </div>
+          </div>
           <h3>Creators & Coaches</h3>
           <p>Personal brand pages, offer sections, booking links, testimonials, and email signup sections.</p>
         </article>
         <article class="work-card">
-          <div class="work-preview local"></div>
+          <div class="work-preview local" aria-label="Local shop website sample concept">
+            <div class="mini-browser">
+              <div class="mini-topbar"><span></span><span></span><span></span></div>
+              <div class="mini-shop">
+                <b>Fresh Menu</b>
+                <small>Hours, location, promos</small>
+              </div>
+              <div class="mini-products"><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
           <h3>Local Shops</h3>
           <p>Menus, hours, location info, product highlights, promotions, and mobile layouts customers can scan quickly.</p>
         </article>
@@ -239,45 +407,38 @@
         </div>
       </div>
       <div class="form-anchor" id="contact">
-        <form class="lead-form" id="leadForm" action="https://formsubmit.co/gerardo.garcia07@icloud.com" method="POST">
-
-  <input type="hidden" name="_subject" value="New website quote request">
-  <input type="hidden" name="_template" value="table">
-
-  <label>
-    Name
-    <input type="text" name="name" placeholder="Your name" required>
-  </label>
-
-  <label>
-    Email
-    <input type="email" name="email" placeholder="you@example.com" required>
-  </label>
-
-  <label>
-    Website type
-    <select name="websiteType" required>
-      <option value="">Choose one</option>
-      <option>Business website</option>
-      <option>Landing page</option>
-      <option>Booking or quote page</option>
-      <option>Website redesign</option>
-    </select>
-  </label>
-
-  <label>
-    Project details
-    <textarea name="details" rows="5" placeholder="What do you want the website to do?" required></textarea>
-  </label>
-
-  <button class="button primary form-button" type="submit">
-    Request Quote
-  </button>
-
-</form>
-
-
-        
+        <form class="lead-form" id="leadForm" action="https://formsubmit.co/gerardo.garcia.gg2189@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New website quote request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://itwasntme4rl.github.io/thank-you.html">
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Extraxtz Web Design. Your quote request was received, and we will review the details soon.">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden-field">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            Website type
+            <select name="websiteType" required>
+              <option value="">Choose one</option>
+              <option>Business website</option>
+              <option>Landing page</option>
+              <option>Booking or quote page</option>
+              <option>Website redesign</option>
+            </select>
+          </label>
+          <label>
+            Project details
+            <textarea name="details" rows="5" placeholder="What do you want the website to do?" required></textarea>
+          </label>
+          <button class="button primary form-button" type="submit">Request Quote</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
       </div>
     </section>
   </main>
